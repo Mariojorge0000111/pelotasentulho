@@ -21,7 +21,7 @@ export const SITE = {
   empresa: '',
 
   // ID do Google Analytics 4 (deixe vazio para não carregar o GA)
-  ga4: '',
+  ga4: 'G-5883MK1R4X',
 };
 
 export function linkWhatsapp(mensagem = SITE.mensagemWhatsapp): string {

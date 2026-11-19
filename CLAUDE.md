@@ -27,6 +27,12 @@ Site de aluguel (rank and rent) do Mário Jorge. Ranqueia no Google para tele en
 - Design: branco + superfície #f3f6f7, azul-petróleo #0b6e8a, amarelo de sinalização #f2b300, verde WhatsApp #15803d. Fonte Manrope.
 - Sem crédito da SVG no rodapé (não deixar rastro da rede de sites de aluguel).
 
+## Analytics, Cloudflare e Search Console
+- Google Analytics 4: propriedade "pelotasentulho.com.br" na conta "Sites SVG" (a401060034), fluxo web 16375593817, ID `G-5883MK1R4X` em `src/config.ts` (`ga4`). Evento `clique_whatsapp` em todo link wa.me e no envio do formulário (área `formulario`).
+- Pendente: marcar `clique_whatsapp` como evento principal quando ele aparecer no GA (até 24 h depois do primeiro clique).
+- Cloudflare Pages: projeto `pelotasentulho` (https://pelotasentulho.pages.dev), criado em 19/11/2026, ligado ao GitHub (main, `npm run build`, `dist`).
+- Domínio adicionado à Cloudflare (plano Free) em 19/11/2026. Nameservers: arnold.ns.cloudflare.com e rosemary.ns.cloudflare.com (troca no Registro.br feita pelo Mário). Depois de ativo: domínio personalizado no Pages (raiz + www), Crawler Hints ligado e Search Console por propriedade de domínio.
+
 ## Regras de conteúdo
 - Título 30–60 caracteres, descrição 130–160. Um H1 por página.
 - Cada artigo mira uma palavra-chave diferente; nada de disputar busca com home, serviço, bairro ou cidade.
