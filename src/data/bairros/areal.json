@@ -1,0 +1,51 @@
+{
+  "slug": "areal",
+  "nome": "Areal",
+  "prep": "no",
+  "titulo": "Caçamba de Entulho no Areal, Pelotas",
+  "descricao": "Caçamba de entulho e coletora no Areal, em Pelotas: obras perto da Av. Domingos de Almeida e da Av. JK, com Ecoponto na região. Orçamento no WhatsApp.",
+  "h1": "Caçamba de entulho no Areal, em Pelotas",
+  "sobre": "O Areal fica a leste do Centro, a caminho do Laranjal, e cresceu junto com as Três Vendas como uma das grandes regiões residenciais de Pelotas. A Avenida Domingos de Almeida e a Avenida Juscelino Kubitschek cortam o bairro, que tem o Museu da Baronesa, muitas casas, prédios novos e bastante comércio.",
+  "secoes": [
+    {
+      "h2": "Casas, prédios novos e reforma de comércio",
+      "paragrafos": [
+        "No Areal convivem casas antigas de família, condomínios mais recentes e lojas ao longo das avenidas. Em casa, a caçamba costuma ficar no recuo ou na frente do portão. Em prédio, ela precisa da autorização do condomínio quando fica em área comum, e da calçada livre quando fica na rua.",
+        "Reformas de loja nas avenidas precisam de atenção redobrada à sinalização. Onde há faixa de ônibus ou proibição de estacionar, a caçamba não pode ficar. O ponto alternativo deve ser combinado com a empresa antes da entrega."
+      ]
+    },
+    {
+      "h2": "Ecoponto JK ou caçamba?",
+      "paragrafos": [
+        "O Sanep mantém o Ecoponto JK, na Avenida Juscelino Kubitschek, que recebe até 1,5 m³ de material por pessoa, de segunda a sábado. Para pouco entulho e com carro disponível, vale levar. Para reforma de verdade, com mais de um carro cheio de entulho, a caçamba sai mais barata do que várias viagens, além de poupar o carro e as costas."
+      ],
+      "lista": [
+        "Até 1,5 m³ e com transporte próprio: Ecoponto",
+        "Acima disso: caçamba de 3 a 5 m³",
+        "Loja na avenida: confira a sinalização antes"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "p": "Qual é o Ecoponto mais perto do Areal?",
+      "r": "O Ecoponto JK, na Av. Juscelino Kubitschek, 3.195. Ele recebe até 1,5 m³ por pessoa, de segunda a sábado, das 8h às 12h e das 13h às 17h."
+    },
+    {
+      "p": "A caçamba pode ficar na garagem do prédio?",
+      "r": "Pode, se o condomínio autorizar e se o caminhão conseguir manobrar. Na rua, siga as regras da Lei nº 4.850/2002."
+    },
+    {
+      "p": "Atendem o Areal e a região das Dunas?",
+      "r": "Sim. Informe a rua e o bairro no pedido."
+    }
+  ],
+  "proximos": [
+    "tres-vendas",
+    "sao-goncalo",
+    "laranjal"
+  ],
+  "fontes": [
+    "https://portal.sanep.com.br/residuos-solidos/ecopontos"
+  ]
+}

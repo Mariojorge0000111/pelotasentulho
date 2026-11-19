@@ -1,0 +1,51 @@
+{
+  "slug": "barragem",
+  "nome": "Barragem",
+  "prep": "na",
+  "titulo": "Caçamba de Entulho na Barragem, Pelotas",
+  "descricao": "Tele entulho e caçamba de entulho na região da Barragem, norte de Pelotas: obras em chácaras, terrenos e loteamentos novos. Peça orçamento no WhatsApp.",
+  "h1": "Caçamba de entulho na região da Barragem, em Pelotas",
+  "sobre": "A Barragem é a região administrativa do norte de Pelotas e leva o nome da Barragem Santa Bárbara, construída em 1968 e que hoje é a principal fonte de água da cidade. É uma área de transição entre a cidade e o campo, com loteamentos, chácaras, terrenos grandes e obras novas.",
+  "secoes": [
+    {
+      "h2": "Terrenos grandes e limpeza de área",
+      "paragrafos": [
+        "Na Barragem aparecem pedidos diferentes dos do Centro: limpeza de terreno para construir, demolição de galpão ou de casa velha de madeira, cercamento e construção nova. Esse tipo de serviço mistura entulho com mato, galhos, madeira e às vezes lixo deixado por outras pessoas.",
+        "Caçamba de entulho é para resíduo de obra. Antes de pedir, separe o que é poda e o que é lixo comum. Madeira e galhos podem ser aceitos por algumas empresas, mas precisam ser avisados, porque têm outro destino e podem mudar o valor."
+      ]
+    },
+    {
+      "h2": "Perto da água, mais cuidado com o descarte",
+      "paragrafos": [
+        "A região fica perto do Arroio Santa Bárbara e da área de proteção da barragem. Entulho largado em terreno ou à beira de arroio contamina o solo e a água que abastece a cidade, e dá multa. Por isso vale ainda mais contratar caçamba de empresa autorizada e saber para onde o material vai."
+      ],
+      "lista": [
+        "Separe poda e lixo comum antes de encher",
+        "Mande foto do terreno para estimar o volume",
+        "Confirme se o caminhão chega até o lote"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "p": "Vocês atendem chácaras e loteamentos da Barragem?",
+      "r": "Sim, conforme o acesso. Estradas de chão em boas condições normalmente permitem a entrega. Mande a localização no WhatsApp."
+    },
+    {
+      "p": "Posso colocar mato e galhos da limpeza do terreno na caçamba?",
+      "r": "Avise antes. Poda tem destino diferente do entulho e algumas empresas pedem caçamba separada."
+    },
+    {
+      "p": "Demolição de casa de madeira vai na caçamba de entulho?",
+      "r": "A madeira deve ser avisada no pedido. Em alguns casos é feita uma caçamba só de madeira, separada da alvenaria."
+    }
+  ],
+  "proximos": [
+    "fragata",
+    "tres-vendas",
+    "simoes-lopes"
+  ],
+  "fontes": [
+    "https://anais-siiepe.ufpel.edu.br/2016/CB_02270.pdf"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "sao-goncalo",
+  "nome": "São Gonçalo",
+  "prep": "no",
+  "titulo": "Caçamba de Entulho no São Gonçalo e Balsa",
+  "descricao": "Caçamba de entulho no São Gonçalo, em Pelotas: Balsa, Ambrósio Perret, Village, Umuarama e condomínios novos. Ecoponto Balsa perto. Peça no WhatsApp.",
+  "h1": "Caçamba de entulho no São Gonçalo, em Pelotas",
+  "sobre": "A região administrativa São Gonçalo fica entre o Canal São Gonçalo, o Arroio Pelotas e a Avenida Juscelino Kubitschek. Reúne loteamentos como Balsa, Ambrósio Perret, Navegantes, Village, Cruzeiro, Umuarama e Marina Ilha Verde, e é uma das áreas que mais crescem em Pelotas, com condomínios fechados e obras novas.",
+  "secoes": [
+    {
+      "h2": "Condomínio fechado: combine com a administração",
+      "paragrafos": [
+        "Em condomínio fechado, a caçamba entra pela portaria e fica no lote ou na rua interna. Cada condomínio tem as suas regras: horário de entrada de caminhão, prazo máximo da caçamba, peso permitido nas ruas internas. Peça essas regras à administração antes de agendar, e passe-as no pedido.",
+        "Obra nova em condomínio gera entulho constante: sobras de bloco, argamassa, cerâmica e embalagem. Muitas administrações exigem caçamba durante toda a obra, para não haver material solto no lote."
+      ]
+    },
+    {
+      "h2": "Balsa e loteamentos antigos",
+      "paragrafos": [
+        "Na Balsa e nos loteamentos mais antigos da região, a caçamba fica na rua, em frente à obra, seguindo a Lei nº 4.850/2002: de preferência no passeio, com 1 metro livre, ou na pista onde é permitido estacionar. Para pouco entulho, o Sanep tem o Ecoponto Balsa, na Rua Paulo Guilayn, que recebe até 1,5 m³ por pessoa."
+      ],
+      "lista": [
+        "Condomínio: peça as regras da administração",
+        "Rua: caçamba em frente à obra, longe da esquina",
+        "Pouco entulho: Ecoponto Balsa"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "p": "A caçamba pode entrar no meu condomínio no São Gonçalo?",
+      "r": "Pode, se a administração autorizar. Informe o horário permitido e onde a caçamba deve ficar."
+    },
+    {
+      "p": "Onde fica o Ecoponto Balsa?",
+      "r": "Na Rua Paulo Guilayn, 201. Funciona de segunda a sábado, das 8h às 12h e das 13h às 17h, com limite de 1,5 m³ por pessoa."
+    },
+    {
+      "p": "Atendem o Ambrósio Perret e o Umuarama?",
+      "r": "Sim. Toda a região do São Gonçalo faz parte da área de atendimento."
+    }
+  ],
+  "proximos": [
+    "navegantes",
+    "porto",
+    "areal"
+  ],
+  "fontes": [
+    "https://revistas.ufpel.edu.br/index.php/pixo/article/download/2581/2030",
+    "https://portal.sanep.com.br/residuos-solidos/ecopontos"
+  ]
+}

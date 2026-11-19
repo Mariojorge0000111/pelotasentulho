@@ -1,0 +1,38 @@
+{
+  "slug": "rio-grande",
+  "nome": "Rio Grande",
+  "prep": "em",
+  "titulo": "Caçamba de Entulho em Rio Grande RS",
+  "descricao": "Caçamba de entulho em Rio Grande RS: consulte disponibilidade de atendimento a partir de Pelotas, com prazo e taxa de deslocamento no orçamento.",
+  "h1": "Caçamba de entulho em Rio Grande",
+  "sobre": "Rio Grande é a cidade portuária vizinha a Pelotas, na saída da Lagoa dos Patos para o mar. Tem mercado próprio de obras e empresas de caçamba locais. O atendimento a partir de Pelotas é possível em alguns casos, conforme a agenda e a distância.",
+  "secoes": [
+    {
+      "h2": "Quando faz sentido pedir a partir de Pelotas",
+      "paragrafos": [
+        "Para obra pontual e com data flexível, vale consultar. A distância entre as duas cidades pesa no preço, principalmente quando são necessárias várias trocas. Em obra longa, uma empresa sediada em Rio Grande tende a ser mais prática. Mande o endereço e o tipo de obra para receber uma resposta direta.",
+        "As regras de uso da via pública em Rio Grande são as do município, com legislação própria. Confirme com a empresa como a caçamba deve ser posicionada e por quanto tempo pode ficar na rua."
+      ]
+    },
+    {
+      "h2": "Cassino e bairros da cidade",
+      "paragrafos": [
+        "O balneário Cassino e os bairros mais afastados ficam mais longe ainda. Nesses casos, informe o endereço exato e se a rua é calçada ou de areia, para a empresa avaliar o acesso do caminhão."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "p": "Vocês atendem Rio Grande?",
+      "r": "Em alguns casos, conforme a agenda da empresa parceira e com taxa de deslocamento. Consulte pelo WhatsApp com o endereço da obra."
+    },
+    {
+      "p": "Vale a pena para obra grande?",
+      "r": "Para obra com muitas trocas, uma empresa sediada em Rio Grande costuma ser mais vantajosa por causa da distância."
+    }
+  ],
+  "proximos": [],
+  "fontes": [
+    "https://pt.wikipedia.org/wiki/Rio_Grande_(Rio_Grande_do_Sul)"
+  ]
+}

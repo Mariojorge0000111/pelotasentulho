@@ -1,0 +1,48 @@
+---
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+import Migalhas from '../../components/Migalhas.astro';
+import MapaAtendimento from '../../components/MapaAtendimento.astro';
+import { BAIRROS, CIDADES } from '../../data/locais';
+const migalhas = [{ nome: 'Bairros' }];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Caçamba de entulho por bairro de Pelotas',
+  itemListElement: BAIRROS.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.nome, url: new URL(`/bairros/${b.slug}/`, Astro.site).href })),
+};
+---
+<Base
+  title="Caçamba de Entulho por Bairro em Pelotas RS"
+  description="Tele entulho e caçamba de entulho nos bairros de Pelotas: Centro, Fragata, Três Vendas, Areal, Laranjal, São Gonçalo e mais, com dicas de cada região."
+  schema={schema}
+  migalhas={migalhas}
+>
+  <header class="pagina-topo">
+    <div class="wrap">
+      <Migalhas itens={migalhas} />
+      <h1>Caçamba de entulho por bairro em Pelotas</h1>
+      <p class="lead estreito">A área urbana de Pelotas é dividida em sete regiões administrativas: Centro, Fragata, Barragem, Três Vendas, Areal, São Gonçalo e Laranjal. Cada uma pede um cuidado diferente: calçada estreita no Centro, rua de areia no Laranjal, condomínio fechado no São Gonçalo. Escolha o seu bairro para ver as dicas. Se ele não estiver na lista, peça do mesmo jeito pelo WhatsApp.</p>
+    </div>
+  </header>
+  <section class="secao">
+    <div class="wrap grade grade-3">
+      {BAIRROS.map((b) => (
+        <article class="card card-link">
+          <h2 style="font-size:1.2rem"><a href={`/bairros/${b.slug}/`}>{b.nome}</a></h2>
+          <p>{b.descricao}</p>
+          <span class="link-seta">Caçamba {b.prep} {b.nome}</span>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="secao secao-areia">
+    <div class="wrap">
+      <h2>Fora de Pelotas</h2>
+      <p>Cidades vizinhas atendidas conforme a agenda da empresa parceira, com possível taxa de deslocamento.</p>
+      <ul class="chips">{CIDADES.map((c) => <li><a href={`/cidades/${c.slug}/`}>{c.nome}</a></li>)}</ul>
+    </div>
+  </section>
+  <MapaAtendimento />
+  <Cta />
+</Base>

@@ -1,0 +1,52 @@
+{
+  "slug": "simoes-lopes",
+  "nome": "Simões Lopes",
+  "prep": "no",
+  "titulo": "Caçamba de Entulho no Simões Lopes, Pelotas",
+  "descricao": "Tele entulho e caçamba de entulho no Simões Lopes, em Pelotas: casas antigas perto da ferrovia, comércio e reformas. Orçamento rápido no WhatsApp.",
+  "h1": "Caçamba de entulho no Simões Lopes, em Pelotas",
+  "sobre": "O Simões Lopes fica colado ao Centro, entre a Avenida Duque de Caxias, a Avenida Brasil e a BR-392, e tem a origem ligada à ferrovia e à antiga estação férrea. Com o tempo, ganhou comércio próprio e virou uma espécie de segundo centro para quem mora na zona oeste.",
+  "secoes": [
+    {
+      "h2": "Casas antigas, lotes estreitos",
+      "paragrafos": [
+        "O bairro tem muitas casas antigas em lotes estreitos, coladas umas nas outras. Reforma ali costuma ser de casa inteira: piso, reboco, banheiro, telhado. O volume é médio e a caçamba quase sempre fica na pista, porque o passeio não comporta a caçamba e ainda 1 metro livre para pedestres.",
+        "Em lote estreito, a frente do imóvel mede às vezes menos do que a caçamba com espaço para manobra. Avise se a sua frente é estreita ou se fica perto da esquina, para a empresa planejar onde baixar a caçamba."
+      ]
+    },
+    {
+      "h2": "Comércio e obra rápida",
+      "paragrafos": [
+        "Reforma de loja e de sala comercial pede velocidade: o comerciante quer reabrir logo. O ideal é programar a caçamba para o dia da quebra, encher em um ou dois dias e pedir a retirada logo em seguida, dentro das 72 horas permitidas na via pública."
+      ],
+      "lista": [
+        "Frente estreita: avise no pedido",
+        "Loja: caçamba no dia da quebra e retirada rápida",
+        "Respeite a sarjeta livre de 20 cm"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "p": "Minha casa tem frente estreita. Cabe caçamba?",
+      "r": "Na maioria dos casos, sim, na pista em frente ao imóvel. Mande uma foto da frente para combinar a posição."
+    },
+    {
+      "p": "Atendem perto da antiga estação férrea?",
+      "r": "Sim. Todo o Simões Lopes faz parte da área de atendimento."
+    },
+    {
+      "p": "Quanto tempo a caçamba pode ficar na frente da loja?",
+      "r": "Na via pública, até 72 horas por caçamba, pela Lei nº 4.850/2002."
+    }
+  ],
+  "proximos": [
+    "centro",
+    "fragata",
+    "porto"
+  ],
+  "fontes": [
+    "https://www2.ufpel.edu.br/cic/2011/anais/pdf/CH/CH_01610.pdf",
+    "https://anais-siiepe.ufpel.edu.br/2025/SA_05308.pdf"
+  ]
+}

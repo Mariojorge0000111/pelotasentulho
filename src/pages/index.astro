@@ -1,0 +1,287 @@
+---
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import MapaAtendimento from '../components/MapaAtendimento.astro';
+import IconeWhats from '../components/IconeWhats.astro';
+import FormOrcamento from '../components/FormOrcamento.astro';
+import { SITE, linkWhatsapp, FONTES } from '../config';
+import { SERVICOS } from '../data/servicos';
+import { BAIRROS, CIDADES } from '../data/locais';
+import { FAQ_HOME } from '../data/faq';
+
+import { POSTS } from '../lib/posts';
+const posts = POSTS.slice(0, 3);
+
+const base = new URL('/', Astro.site).href;
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${base}#servico`,
+    name: 'Tele entulho e caçamba de entulho em Pelotas',
+    serviceType: 'Aluguel de caçamba de entulho',
+    provider: { '@id': `${base}#organizacao` },
+    areaServed: [
+      { '@type': 'City', name: 'Pelotas' },
+      ...CIDADES.map((c) => ({ '@type': 'City', name: c.nome })),
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Serviços',
+      itemListElement: SERVICOS.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: s.nome, url: new URL(`/${s.slug}/`, Astro.site).href },
+      })),
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ_HOME.map((f) => ({ '@type': 'Question', name: f.p, acceptedAnswer: { '@type': 'Answer', text: f.r } })),
+  },
+];
+
+const passos = [
+  { t: 'Chame no WhatsApp', d: 'Diga o endereço, o bairro e o que vai descartar. Foto do entulho ajuda.' },
+  { t: 'Receba o orçamento', d: 'Tamanho indicado, valor, prazo de entrega e dias de permanência, antes de fechar.' },
+  { t: 'A caçamba chega', d: 'Entregue no ponto combinado: dentro do terreno ou em frente à obra.' },
+  { t: 'Retirada ou troca', d: 'Encheu? Avise. A caçamba sai e o entulho vai para destino licenciado.' },
+];
+
+const tamanhos = [
+  { m: 3, uso: 'Banheiro, cozinha, muro pequeno, limpeza de pátio', carrinhos: 50, h: 36 },
+  { m: 4, uso: 'A mais comum em Pelotas. Reforma de vários cômodos, troca de piso', carrinhos: 65, h: 46 },
+  { m: 5, uso: 'Telhado, demolição e obra nova. Máximo permitido em Pelotas', carrinhos: 80, h: 56 },
+];
+const wa = linkWhatsapp();
+---
+<Base
+  title="Tele Entulho e Caçamba de Entulho em Pelotas – Coletora"
+  description="Tele entulho e caçamba de entulho em Pelotas RS: coletora de até 5 m³ para obra, reforma e limpeza de terreno, em todos os bairros. Orçamento no WhatsApp."
+  schema={schema}
+>
+  <section class="hero">
+    <div class="wrap hero-grade">
+      <div>
+        <div class="faixa-sinal" aria-hidden="true"></div>
+        <p class="sobretitulo">Tele entulho · Pelotas, RS</p>
+        <h1>Tele entulho e caçamba de entulho em Pelotas, <em>sem complicação</em></h1>
+        <p class="lead">Precisa de tele entulho em Pelotas? A caçamba de entulho, que aqui chamamos de coletora, vai até a sua obra, reforma ou limpeza de terreno. Mande o bairro pelo WhatsApp e receba tamanho, valor e prazo. O entulho sai para um destino licenciado.</p>
+        <div class="botoes">
+          <a class="btn btn-whats" href={wa} target="_blank" rel="noopener" data-evento="whatsapp"><IconeWhats />Pedir caçamba no WhatsApp</a>
+          <a class="btn btn-claro" href="/orcamento/">Formulário de orçamento</a>
+        </div>
+        <ul class="selos">
+          <li>Até 5 m³</li>
+          <li>Todos os bairros</li>
+          <li>Orçamento sem compromisso</li>
+        </ul>
+      </div>
+      <figure class="hero-foto"><Img nome="capa-cacamba" alt="Caçamba de entulho estacionária azul, de metal, parada sobre piso intertravado em frente a um prédio" prioridade sizes="(max-width: 860px) 92vw, 440px" /></figure>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="wrap">
+      <div class="cabeca">
+        <div>
+          <p class="sobretitulo">Como funciona</p>
+          <h2>Do pedido à retirada</h2>
+        </div>
+      </div>
+      <ol class="passos">
+        {passos.map((p) => (
+          <li>
+            <h3>{p.t}</h3>
+            <p>{p.d}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="secao secao-areia" id="pedido">
+    <div class="wrap duo" style="align-items:start">
+      <div>
+        <p class="sobretitulo">Pedido rápido</p>
+        <h2>Peça sua caçamba em 30 segundos</h2>
+        <p>Escolha o bairro e o tipo de entulho. O WhatsApp abre com tudo escrito, é só enviar.</p>
+        <ul class="lista-check">
+          <li>Orçamento sem compromisso</li>
+          <li>Tamanho indicado para a sua obra</li>
+          <li>Entrega no dia combinado</li>
+        </ul>
+      </div>
+      <FormOrcamento id="pedido-home" origem="home" />
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="wrap">
+      <div class="cabeca">
+        <div>
+          <p class="sobretitulo">Serviços</p>
+          <h2>Tele entulho para cada tipo de obra</h2>
+          <p>Sem alugar caminhão nem procurar onde descartar. A caçamba fica na obra, você enche no seu ritmo e agenda a retirada pelo WhatsApp.</p>
+        </div>
+        <a class="link-seta" href="/servicos/">Todos os serviços</a>
+      </div>
+      <div class="grade grade-3 trilho">
+        {SERVICOS.map((s) => (
+          <article class="card card-img card-link">
+            <Img nome={s.imagem} alt={s.imagemAlt} sizes="(max-width: 600px) 82vw, (max-width: 960px) 50vw, 360px" />
+            <div class="card-corpo">
+              <h3><a href={`/${s.slug}/`}>{s.nome}</a></h3>
+              <p>{s.curto}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao-areia">
+    <div class="wrap">
+      <div class="cabeca">
+        <div>
+          <p class="sobretitulo">Tamanhos</p>
+          <h2>Qual caçamba pedir</h2>
+          <p>Um carrinho de mão de obra leva uns 60 litros. Conte os carrinhos de entulho e compare. Em Pelotas, a lei limita a caçamba a 5 m³.</p>
+        </div>
+        <a class="link-seta" href="/tamanhos-de-cacamba/">Guia de tamanhos</a>
+      </div>
+      <div class="tamanhos">
+        {tamanhos.map((t) => (
+          <div class={`tamanho${t.m === 4 ? ' tamanho-destaque' : ''}`}>
+            <div class="m3">{t.m}<small>m³</small></div>
+            <svg width="120" height="56" viewBox="0 0 150 70" aria-hidden="true">
+              <path d={`M10 ${70 - t.h} H140 L128 64 H22 Z`} fill="#0b6e8a" />
+              <rect x="22" y="64" width="106" height="6" rx="3" fill={t.m === 4 ? '#ffffff' : '#111827'} />
+              <rect x="36" y={`${74 - t.h}`} width="14" height="6" fill="#f2b300" /><rect x="100" y={`${74 - t.h}`} width="14" height="6" fill="#f2b300" />
+            </svg>
+            <strong>Cerca de {t.carrinhos} carrinhos de mão</strong>
+            <p class="uso">{t.uso}.</p>
+            <a class="link-seta" href={linkWhatsapp(`Olá! Vim pelo site Pelotas Entulho e quero orçamento de caçamba de ${t.m} m³. Bairro: `)} target="_blank" rel="noopener" data-evento="whatsapp">Orçar {t.m} m³</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="wrap">
+      <div class="cabeca">
+        <div>
+          <p class="sobretitulo">Antes de encher</p>
+          <h2>O que vai na caçamba</h2>
+          <p>Caçamba de entulho recebe resíduo de obra. O resto tem destino próprio.</p>
+        </div>
+        <a class="link-seta" href="/recolhimento-de-entulho/">O que entra no recolhimento</a>
+      </div>
+      <div class="tres-colunas">
+        <div class="coluna" style="--c:#15803d">
+          <h3>Pode</h3>
+          <p>Tijolo, bloco, concreto, reboco, telha cerâmica, piso, azulejo, louça, pedra, areia e terra.</p>
+        </div>
+        <div class="coluna" style="--c:#ca8a04">
+          <h3>Consulte antes</h3>
+          <p>Madeira, gesso, metal, vidro, poda de árvore e móveis velhos.</p>
+        </div>
+        <div class="coluna" style="--c:#dc2626">
+          <h3>Não pode</h3>
+          <p>Lixo doméstico, tinta, solvente, óleo, amianto, pneu, eletrônico, pilha e lâmpada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao-areia">
+    <div class="wrap duo">
+      <div>
+        <p class="sobretitulo">Lei Municipal nº 4.850/2002</p>
+        <h2>O que Pelotas exige de quem usa caçamba na rua</h2>
+        <ul class="lista-check">
+          <li>Só empresas cadastradas e autorizadas pela Secretaria de Transportes e Trânsito podem colocar caçamba na via pública.</li>
+          <li>Caçamba de no máximo 5 m³, com faixas refletivas amarelas e o nome, o telefone e o número da caçamba nas laterais.</li>
+          <li>Ela fica em frente à obra, de preferência no passeio, com 1 metro livre para pedestres.</li>
+          <li>Na pista, só onde é permitido estacionar, a pelo menos 10 metros da esquina e com 20 cm de sarjeta livre.</li>
+          <li>Na via pública, cada caçamba pode ficar no máximo 72 horas.</li>
+        </ul>
+        <p class="fonte">Fonte: <a href={FONTES.lei4850} target="_blank" rel="noopener">Lei Municipal nº 4.850/2002</a>, Câmara Municipal de Pelotas.</p>
+        <a class="link-seta" href="/coletora-de-entulho/">Como deve ser a coletora</a>
+      </div>
+      <Img nome="entulho-tijolos" alt="Grande monte de tijolos quebrados, entulho típico de demolição" sizes="(max-width: 860px) 100vw, 520px" />
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="wrap estreito">
+      <p class="sobretitulo">Caçamba de entulho em Pelotas</p>
+      <h2>Tele entulho, coletora, caçamba: é tudo a mesma coisa</h2>
+      <p>No Rio Grande do Sul, quem precisa tirar entulho de obra procura por <strong><a href="/tele-entulho/">tele entulho</a></strong>. Em Pelotas, a caçamba ganhou outro nome: <strong><a href="/coletora-de-entulho/">coletora</a></strong>. Em outros lugares aparecem disk entulho, caçamba estacionária e contêiner de entulho. Em todos os casos é a mesma solução: uma caixa metálica de até 5 m³ que fica na frente da obra e depois é recolhida por um caminhão poliguindaste.</p>
+      <p>O que muda de uma empresa para outra é o atendimento, o prazo e o cuidado com o destino do entulho. Em Pelotas, só empresas cadastradas na prefeitura podem colocar caçamba na rua, e a frota passa por vistoria a cada seis meses. Pergunte para onde vai o material: é a garantia de que o entulho da sua obra não vai parar num terreno baldio.</p>
+      <p>Para pouco entulho, os Ecopontos do Sanep recebem até 1,5 m³ por pessoa, levado pelo próprio morador. Para reforma, demolição e limpeza de terreno, a caçamba resolve de uma vez. Mande pelo WhatsApp o bairro e o que vai ser descartado. Se não souber o tamanho, envie fotos do entulho e receba a indicação junto com o valor.</p>
+    </div>
+  </section>
+
+  <section class="secao secao-areia">
+    <div class="wrap">
+      <div class="cabeca">
+        <div>
+          <p class="sobretitulo">Onde atendemos</p>
+          <h2>Caçamba de entulho nos bairros de Pelotas</h2>
+          <p>Atendemos as sete regiões da cidade. Estes bairros têm página com dicas de acesso e de obra:</p>
+        </div>
+        <a class="link-seta" href="/bairros/">Ver todos</a>
+      </div>
+      <ul class="chips">
+        {BAIRROS.map((b) => <li><a href={`/bairros/${b.slug}/`}>{b.nome}</a></li>)}
+      </ul>
+      <h3 style="margin-top:2.5rem">Cidades vizinhas</h3>
+      <p class="fonte" style="margin-bottom:1rem">Conforme a agenda da empresa parceira, com possível taxa de deslocamento.</p>
+      <ul class="chips">
+        {CIDADES.map((c) => <li><a href={`/cidades/${c.slug}/`}>{c.nome}</a></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <MapaAtendimento />
+
+  <section class="secao">
+    <div class="wrap estreito">
+      <p class="sobretitulo">Dúvidas</p>
+      <h2>Perguntas frequentes</h2>
+      <Faq itens={FAQ_HOME} />
+      <p style="margin-top:1.5rem"><a class="link-seta" href="/perguntas-frequentes/">Todas as perguntas</a></p>
+    </div>
+  </section>
+
+  {posts.length > 0 && (
+    <section class="secao secao-areia">
+      <div class="wrap">
+        <div class="cabeca">
+          <div>
+            <p class="sobretitulo">Blog</p>
+            <h2>Guias antes de pedir</h2>
+          </div>
+          <a class="link-seta" href="/blog/">Ver o blog</a>
+        </div>
+        <div class="grade grade-3 trilho">
+          {posts.map((p) => (
+            <article class="card card-img card-link">
+              <Img nome={p.imagem} alt={p.imagemAlt} sizes="(max-width: 600px) 82vw, (max-width: 960px) 50vw, 360px" />
+              <div class="card-corpo">
+                <h3><a href={p.url}>{p.titulo}</a></h3>
+                <p>{p.descricao}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Cta />
+</Base>

@@ -1,0 +1,52 @@
+{
+  "slug": "navegantes",
+  "nome": "Navegantes",
+  "prep": "no",
+  "titulo": "Caçamba de Entulho no Navegantes, Pelotas",
+  "descricao": "Caçamba de entulho e coletora no Navegantes, em Pelotas: reformas e ampliações nos Navegantes I, II e III, perto do Ecoponto Balsa. Peça no WhatsApp.",
+  "h1": "Caçamba de entulho no Navegantes, em Pelotas",
+  "sobre": "O Navegantes é um loteamento da região do São Gonçalo, criado no fim do século XX e dividido em Navegantes I, II e III. É um bairro de casas de família que cresce rápido, com muitas ampliações, novas construções e lotes sendo ocupados.",
+  "secoes": [
+    {
+      "h2": "Ampliação e construção no lote",
+      "paragrafos": [
+        "No Navegantes, o pedido mais comum é para ampliar a casa: mais um quarto, a garagem, o muro, a laje para um segundo piso. São obras feitas por etapas, em que o entulho aparece aos poucos. Juntar o material num canto do lote e pedir a caçamba quando houver volume costuma economizar uma viagem.",
+        "Quando der, deixe a caçamba dentro do lote. Na rua, ela fica em frente à obra, na pista onde é permitido estacionar, com 20 cm de sarjeta livre, e pode ficar até 72 horas."
+      ]
+    },
+    {
+      "h2": "Área baixa: chuva e sarjeta livre",
+      "paragrafos": [
+        "Partes da região do São Gonçalo são baixas e próximas a arroios e canais, e a prefeitura já incluiu bairros da área em mapas de risco de alagamento. Deixar a sarjeta livre ajuda a água a correr. Depois de chuva forte, entulho encharcado pesa mais: se for o caso, encha menos e peça a troca."
+      ],
+      "lista": [
+        "Junte o entulho e peça a caçamba quando houver volume",
+        "Caçamba dentro do lote sempre que possível",
+        "Pouco material: Ecoponto Balsa, na Rua Paulo Guilayn"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "p": "Atendem os Navegantes I, II e III?",
+      "r": "Sim. Informe a rua e qual dos Navegantes no pedido."
+    },
+    {
+      "p": "Vale a pena levar o entulho ao Ecoponto?",
+      "r": "Para até 1,5 m³ e com transporte próprio, sim. O Ecoponto Balsa é o mais próximo. Acima disso, a caçamba compensa."
+    },
+    {
+      "p": "A caçamba pode ficar no meu lote?",
+      "r": "Pode, se o caminhão conseguir entrar e manobrar. Mande uma foto do acesso."
+    }
+  ],
+  "proximos": [
+    "sao-goncalo",
+    "porto",
+    "laranjal"
+  ],
+  "fontes": [
+    "https://revistas.ufpel.edu.br/index.php/pixo/article/download/6800/6058",
+    "https://wp.ufpel.edu.br/artenosul/2024/12/21/15o-ruas-de-lazer-promove-visibilidade-da-cultura-e-historia-do-bairro-navegantes/"
+  ]
+}

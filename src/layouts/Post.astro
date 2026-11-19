@@ -1,0 +1,99 @@
+---
+import Base from './Base.astro';
+import Img from '../components/Img.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import Migalhas from '../components/Migalhas.astro';
+import IconeWhats from '../components/IconeWhats.astro';
+import { SITE, linkWhatsapp } from '../config';
+import { SILOS, siloPorSlug, postsDoSilo } from '../data/silos';
+import { SERVICOS } from '../data/servicos';
+import type { Post } from '../lib/posts';
+
+const { p: f } = Astro.props as { p: Post };
+const base = new URL('/', Astro.site).href;
+const url = new URL(Astro.url.pathname, Astro.site).href;
+const silo = siloPorSlug(f.silo);
+const migalhas = silo
+  ? [{ nome: 'Blog', href: '/blog/' }, { nome: silo.nome, href: `/blog/categoria/${silo.slug}/` }, { nome: f.titulo }]
+  : [{ nome: 'Blog', href: '/blog/' }, { nome: f.titulo }];
+const urlAtual = Astro.url.pathname;
+const irmaos = silo ? postsDoSilo(silo.slug).filter((p) => p.url !== urlAtual).slice(0, 6) : [];
+const dataBr = new Date(f.data + 'T12:00:00').toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+const schema: object[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: f.titulo,
+    description: f.descricao,
+    datePublished: f.data,
+    dateModified: f.atualizado ?? f.data,
+    inLanguage: 'pt-BR',
+    mainEntityOfPage: url,
+    ...(silo ? { articleSection: silo.nome } : {}),
+    ...(f.palavraChave ? { keywords: f.palavraChave } : {}),
+    image: new URL(`/images/${f.imagem}.webp`, Astro.site).href,
+    author: { '@type': 'Organization', name: SITE.nome, url: base },
+    publisher: { '@id': `${base}#organizacao` },
+  },
+];
+if (f.faq?.length) {
+  schema.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: f.faq.map((q: any) => ({ '@type': 'Question', name: q.p, acceptedAnswer: { '@type': 'Answer', text: q.r } })),
+  });
+}
+const mensagem = `Olá! Li o guia "${f.titulo}" no site Pelotas Entulho e quero um orçamento de caçamba. Bairro: `;
+---
+<Base title={f.tituloSeo ?? f.titulo} description={f.descricao} schema={schema} migalhas={migalhas} ogType="article" mensagem={mensagem} preloadImg={f.imagem}>
+  <header class="pagina-topo">
+    <div class="wrap post">
+      <Migalhas itens={migalhas} />
+      <h1>{f.titulo}</h1>
+      <p class="meta">Publicado em <time datetime={f.data}>{dataBr}</time> · {SITE.nome}</p>
+    </div>
+  </header>
+  <section class="secao">
+    <div class="wrap conteudo">
+      <article class="post">
+        <figure><Img nome={f.imagem} alt={f.imagemAlt} prioridade /></figure>
+        <slot />
+        {f.faq?.length > 0 && (
+          <>
+            <h2>Perguntas rápidas</h2>
+            <Faq itens={f.faq} />
+          </>
+        )}
+        {silo && (
+          <nav class="relacionados" aria-label={`Mais sobre ${silo.nome.toLowerCase()}`}>
+            <p class="sobretitulo">{silo.nome}</p>
+            <h2>Continue lendo</h2>
+            <ul>
+              {silo.pilar.href !== urlAtual && <li class="pilar"><a href={silo.pilar.href}>{silo.pilar.nome}</a><span>Guia principal do tema</span></li>}
+              {irmaos.map((p) => <li><a href={p.url}>{p.titulo}</a></li>)}
+            </ul>
+          </nav>
+        )}
+      </article>
+      <aside class="lateral">
+        <div class="box-cta">
+          <p class="h">Vai precisar de caçamba?</p>
+          <p>Mande o endereço e o tipo de entulho. Orçamento sem compromisso.</p>
+          <a class="btn btn-whats" href={linkWhatsapp(mensagem)} target="_blank" rel="noopener" data-evento="whatsapp"><IconeWhats />Chamar no WhatsApp</a>
+        </div>
+        <nav class="box-links" aria-label="Categorias do blog">
+          <p class="h">Categorias</p>
+          <ul>{SILOS.map((x) => <li><a href={`/blog/categoria/${x.slug}/`}>{x.nome}</a></li>)}</ul>
+        </nav>
+        <nav class="box-links" aria-label="Serviços">
+          <p class="h">Serviços</p>
+          <ul>
+            {SERVICOS.map((x) => <li><a href={`/${x.slug}/`}>{x.nome}</a></li>)}
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </section>
+  <Cta mensagem={mensagem} />
+</Base>

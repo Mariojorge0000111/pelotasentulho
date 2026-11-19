@@ -1,0 +1,16 @@
+---
+import Post from '../../layouts/Post.astro';
+import { linkWhatsapp } from '../../config';
+import { POSTS, semLinksFuturos, type Post as P } from '../../lib/posts';
+
+export function getStaticPaths() {
+  return POSTS.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+const { p } = Astro.props as { p: P };
+// [[CTA]] sozinho numa linha do artigo vira o botão de WhatsApp no meio do texto
+const msg = `Olá! Li o guia "${p.titulo}" no site Pelotas Entulho e quero um orçamento de caçamba. Bairro: `;
+const icone = '<svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3 29l7.3-1.9c1.8 1 3.8 1.5 5.8 1.5 7 0 12.7-5.7 12.7-12.6C28.7 8.6 23 3 16 3z"/></svg>';
+const cta = `<div class="cta-meio"><p><strong>Vai precisar de caçamba em Pelotas?</strong> Mande o bairro e o tipo de entulho e receba tamanho, valor e prazo.</p><a class="btn btn-whats" href="${linkWhatsapp(msg)}" target="_blank" rel="noopener" data-evento="whatsapp">${icone}Pedir orçamento no WhatsApp</a></div>`;
+const html = semLinksFuturos(await p.compiledContent()).replace(/<p>\[\[CTA\]\]<\/p>/g, cta);
+---
+<Post p={p}><Fragment set:html={html} /></Post>

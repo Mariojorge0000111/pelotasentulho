@@ -1,0 +1,95 @@
+---
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import Migalhas from '../components/Migalhas.astro';
+import IconeWhats from '../components/IconeWhats.astro';
+import { linkWhatsapp, FONTES } from '../config';
+import { SERVICOS, type Servico } from '../data/servicos';
+import { BAIRROS } from '../data/locais';
+import { SILOS, postsDoSilo } from '../data/silos';
+
+export function getStaticPaths() {
+  return SERVICOS.map((s) => ({ params: { servico: s.slug }, props: { s } }));
+}
+const { s } = Astro.props as { s: Servico };
+const base = new URL('/', Astro.site).href;
+const outros = SERVICOS.filter((o) => o.slug !== s.slug);
+const migalhas = [{ nome: 'Serviços', href: '/servicos/' }, { nome: s.nome }];
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: s.h1,
+    description: s.descricao,
+    serviceType: s.nome,
+    url: new URL(Astro.url.pathname, Astro.site).href,
+    provider: { '@id': `${base}#organizacao` },
+    areaServed: { '@type': 'City', name: 'Pelotas', containedInPlace: { '@type': 'State', name: 'Rio Grande do Sul' } },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: s.faq.map((f) => ({ '@type': 'Question', name: f.p, acceptedAnswer: { '@type': 'Answer', text: f.r } })),
+  },
+];
+const wa = linkWhatsapp(s.mensagem);
+const silo = SILOS.find((x) => x.slug === s.silo);
+const guias = silo ? postsDoSilo(silo.slug).slice(0, 8) : [];
+---
+<Base title={s.titulo} description={s.descricao} schema={schema} migalhas={migalhas} mensagem={s.mensagem} preloadImg={s.imagem}>
+  <header class="pagina-topo">
+    <div class="wrap">
+      <Migalhas itens={migalhas} />
+      <h1>{s.h1}</h1>
+      <p class="lead estreito">{s.intro}</p>
+      <div class="botoes">
+        <a class="btn btn-whats" href={wa} target="_blank" rel="noopener" data-evento="whatsapp"><IconeWhats />Pedir orçamento no WhatsApp</a>
+        <a class="btn btn-claro" href="/orcamento/">Preencher formulário</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="secao">
+    <div class="wrap conteudo">
+      <div>
+        <figure><Img nome={s.imagem} alt={s.imagemAlt} prioridade /></figure>
+        {s.secoes.map((sec) => (
+          <>
+            <h2>{sec.h2}</h2>
+            {sec.paragrafos.map((p) => <p>{p}</p>)}
+            {sec.lista && <ul class="lista-check">{sec.lista.map((l) => <li>{l}</li>)}</ul>}
+          </>
+        ))}
+        <h2>Perguntas sobre {s.nome.toLowerCase()}</h2>
+        <Faq itens={s.faq} />
+        {silo && guias.length > 0 && (
+          <nav class="relacionados" aria-label="Guias relacionados">
+            <p class="sobretitulo">{silo.nome}</p>
+            <h2>Guias sobre {s.nome.toLowerCase()}</h2>
+            <ul>{guias.map((g) => <li><a href={g.url}>{g.titulo}</a></li>)}</ul>
+            <p style="margin-top:1rem"><a class="link-seta" href={`/blog/categoria/${silo.slug}/`}>Ver todos os guias de {silo.nome.toLowerCase()}</a></p>
+          </nav>
+        )}
+        <p class="fonte" style="margin-top:1.5rem">Regras citadas: <a href={FONTES.lei4850} target="_blank" rel="noopener">Lei Municipal nº 4.850/2002</a> (caçambas estacionárias na via pública), Câmara Municipal de Pelotas. Ecopontos: <a href={FONTES.ecopontos} target="_blank" rel="noopener">Sanep</a>.</p>
+      </div>
+      <aside class="lateral">
+        <div class="box-cta">
+          <p class="h">Orçamento pelo WhatsApp</p>
+          <p>Mande endereço, bairro e tipo de entulho. Você recebe tamanho, valor e prazo antes de fechar.</p>
+          <a class="btn btn-whats" href={wa} target="_blank" rel="noopener" data-evento="whatsapp"><IconeWhats />Chamar no WhatsApp</a>
+        </div>
+        <nav class="box-links" aria-label="Outros serviços">
+          <p class="h">Outros serviços</p>
+          <ul>{outros.map((o) => <li><a href={`/${o.slug}/`}>{o.nome}</a></li>)}</ul>
+        </nav>
+        <nav class="box-links" aria-label="Bairros">
+          <p class="h">Bairros de Pelotas</p>
+          <ul>{BAIRROS.map((b) => <li><a href={`/bairros/${b.slug}/`}>{s.nome} {b.prep} {b.nome}</a></li>)}</ul>
+        </nav>
+      </aside>
+    </div>
+  </section>
+  <Cta mensagem={s.mensagem} />
+</Base>

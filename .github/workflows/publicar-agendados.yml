@@ -1,0 +1,47 @@
+# Publica os artigos agendados: todo dia de manhã verifica se há artigo com a data de hoje.
+# Se houver, registra em src/data/publicacoes.txt e faz um commit na main.
+# O push dispara o build automático da Cloudflare Pages, que libera o artigo do dia.
+# Depois avisa o IndexNow (Bing, Yandex e outros) sobre as URLs novas.
+name: Publicar artigos agendados
+
+on:
+  schedule:
+    - cron: '17 9 * * *' # 06:17 em Pelotas (UTC-3)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publica artigos com a data de hoje
+        id: pub
+        run: |
+          HOJE=$(TZ=America/Sao_Paulo date +%F)
+          ARTIGOS=$(grep -l "^data: \"$HOJE\"" src/content/blog/*.md || true)
+          if [ -z "$ARTIGOS" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            echo "Nenhum artigo agendado para $HOJE"; exit 0
+          fi
+          URLS=""
+          for a in $ARTIGOS; do
+            S=$(basename "$a" .md)
+            echo "$HOJE $S" >> src/data/publicacoes.txt
+            URLS="$URLS https://pelotasentulho.com.br/blog/$S/"
+          done
+          [ -z "$ARTIGOS" ] && echo "$HOJE rebuild manual" >> src/data/publicacoes.txt
+          echo "urls=$URLS" >> "$GITHUB_OUTPUT"
+          git config user.name "Mário Jorge"
+          git config user.email "Mariojorge0000111@users.noreply.github.com"
+          git add src/data/publicacoes.txt
+          git commit -m "Publica artigos agendados de $HOJE"
+          git push
+      - name: Avisa o IndexNow
+        if: steps.pub.outputs.urls != ''
+        run: |
+          sleep 240 # tempo para a Cloudflare terminar o build
+          LISTA=$(for u in ${{ steps.pub.outputs.urls }} https://pelotasentulho.com.br/blog/; do printf '"%s",' "$u"; done | sed 's/,$//')
+          curl -sS -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json; charset=utf-8' \
+            -d "{\"host\":\"pelotasentulho.com.br\",\"key\":\"a8606fee262a094fdb5ed66d4bc03e54\",\"keyLocation\":\"https://pelotasentulho.com.br/a8606fee262a094fdb5ed66d4bc03e54.txt\",\"urlList\":[$LISTA]}" -w '\nHTTP %{http_code}\n'

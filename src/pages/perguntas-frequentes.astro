@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import Migalhas from '../components/Migalhas.astro';
+import { FAQ, FAQ_TODAS } from '../data/faq';
+import { FONTES } from '../config';
+const migalhas = [{ nome: 'Perguntas frequentes' }];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ_TODAS.map((f) => ({ '@type': 'Question', name: f.p, acceptedAnswer: { '@type': 'Answer', text: f.r } })),
+};
+---
+<Base
+  title="Perguntas Frequentes sobre Caçamba de Entulho"
+  description="Dúvidas sobre caçamba de entulho e coletora em Pelotas RS: o que pode e não pode, prazo de 72 horas na rua, tamanhos, preço e regras da lei municipal."
+  schema={schema}
+  migalhas={migalhas}
+>
+  <header class="pagina-topo">
+    <div class="wrap">
+      <Migalhas itens={migalhas} />
+      <h1>Perguntas frequentes sobre caçamba de entulho</h1>
+      <p class="lead estreito">Respostas diretas sobre como funciona o tele entulho em Pelotas, o que vai na caçamba, como escolher o tamanho e o que a lei municipal exige.</p>
+    </div>
+  </header>
+  <section class="secao">
+    <div class="wrap estreito">
+      {FAQ.map((g) => (
+        <>
+          <h2 style="margin-top:2rem">{g.titulo}</h2>
+          <Faq itens={g.itens} />
+        </>
+      ))}
+      <p class="fonte" style="margin-top:2rem">Regras municipais citadas: <a href={FONTES.lei4850} target="_blank" rel="noopener">Lei Municipal nº 4.850/2002</a>, que regulamenta as caçambas estacionárias na via pública (Câmara Municipal de Pelotas). Ecopontos: <a href={FONTES.ecopontos} target="_blank" rel="noopener">Sanep</a>. Classes de resíduos conforme a Resolução Conama nº 307/2002.</p>
+    </div>
+  </section>
+  <Cta titulo="Não achou sua dúvida?" texto="Pergunte direto pelo WhatsApp. Se puder, mande uma foto do entulho e o endereço da obra." />
+</Base>

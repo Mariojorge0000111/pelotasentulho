@@ -1,0 +1,26 @@
+---
+import { linkWhatsapp } from '../config';
+import IconeWhats from './IconeWhats.astro';
+
+interface Props {
+  titulo?: string;
+  texto?: string;
+  mensagem?: string;
+}
+const {
+  titulo = 'Precisa de caçamba em Pelotas?',
+  texto = 'Mande o endereço e o tipo de entulho pelo WhatsApp. Você recebe o tamanho indicado, o valor e o prazo antes de fechar.',
+  mensagem,
+} = Astro.props;
+---
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-caixa">
+      <div>
+        <h2>{titulo}</h2>
+        <p>{texto}</p>
+      </div>
+      <a class="btn btn-whats" href={linkWhatsapp(mensagem)} target="_blank" rel="noopener" data-evento="whatsapp"><IconeWhats />Pedir orçamento</a>
+    </div>
+  </div>
+</section>

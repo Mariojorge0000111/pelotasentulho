@@ -1,0 +1,51 @@
+{
+  "slug": "fragata",
+  "nome": "Fragata",
+  "prep": "no",
+  "titulo": "Caçamba de Entulho no Fragata, Pelotas",
+  "descricao": "Caçamba de entulho e coletora no Fragata, em Pelotas: obras em casa com pátio, Py Crespo e Av. Duque de Caxias. Orçamento rápido pelo WhatsApp.",
+  "h1": "Caçamba de entulho no Fragata, em Pelotas",
+  "sobre": "O Fragata é a grande região oeste de Pelotas, que cresceu ao longo da primeira metade do século XX a partir da Avenida Duque de Caxias. É bairro de casa térrea, muitas vezes com pátio, de comércio de rua e de loteamentos como o Py Crespo. É também onde muita gente amplia a casa aos poucos, cômodo por cômodo.",
+  "secoes": [
+    {
+      "h2": "Ampliação, muro e churrasqueira",
+      "paragrafos": [
+        "No Fragata, a obra mais comum é a ampliação: um quarto a mais nos fundos, a área com churrasqueira, o muro novo, a garagem coberta. Nesse tipo de obra o entulho sai em duas fases. Primeiro vem a quebra e a escavação, com muita terra e tijolo. Depois sobram restos de bloco, argamassa e embalagem.",
+        "Quando há pátio, a caçamba pode ficar dentro do terreno, e o limite de 72 horas da via pública deixa de valer. Fica valendo o prazo combinado com a empresa. É a forma mais tranquila de trabalhar numa obra que vai durar semanas."
+      ]
+    },
+    {
+      "h2": "Terra de escavação e aterro",
+      "paragrafos": [
+        "Fundação de ampliação e rebaixo de terreno geram terra, e terra é o material mais pesado que vai para a caçamba. Uma caçamba cheia só de terra pode passar do peso que o caminhão consegue levantar. Avise quando o entulho for principalmente terra, para receber a orientação de quanto encher."
+      ],
+      "lista": [
+        "Caçamba dentro do pátio sempre que der",
+        "Terra pura: encha menos e peça troca",
+        "Separe a madeira das formas, que tem outro destino"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "p": "Atendem o Py Crespo e outros loteamentos do Fragata?",
+      "r": "Sim. Todo o Fragata faz parte da área de atendimento. Informe a rua e o loteamento no pedido."
+    },
+    {
+      "p": "A caçamba pode ficar dentro do meu pátio?",
+      "r": "Pode, se o portão e o caminho permitirem a manobra do caminhão poliguindaste. Mande a largura do portão e uma foto do acesso."
+    },
+    {
+      "p": "Posso jogar terra de escavação na caçamba?",
+      "r": "Pode, mas terra é muito pesada. Avise no pedido para saber até onde encher."
+    }
+  ],
+  "proximos": [
+    "simoes-lopes",
+    "centro",
+    "barragem"
+  ],
+  "fontes": [
+    "https://periodicos.ufpel.edu.br/index.php/Projectare/article/view/21729/13782"
+  ]
+}

@@ -1,0 +1,122 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from './Faq.astro';
+import Cta from './Cta.astro';
+import Migalhas from './Migalhas.astro';
+import IconeWhats from './IconeWhats.astro';
+import MapaAtendimento from './MapaAtendimento.astro';
+import { linkWhatsapp, FONTES } from '../config';
+import { publicado } from '../lib/posts';
+import { SERVICOS } from '../data/servicos';
+import { BAIRROS, CIDADES, type Local } from '../data/locais';
+
+interface Props { l: Local; tipo: 'bairro' | 'cidade' }
+const { l, tipo } = Astro.props;
+const base = new URL('/', Astro.site).href;
+const ehBairro = tipo === 'bairro';
+const onde = ehBairro ? `${l.prep} ${l.nome}` : `${l.prep} ${l.nome}`;
+const mensagem = ehBairro
+  ? `Olá! Vim pelo site Pelotas Entulho e preciso de caçamba de entulho ${l.prep} ${l.nome}, em Pelotas. Rua: `
+  : `Olá! Vim pelo site Pelotas Entulho e preciso de caçamba de entulho em ${l.nome}. Vocês atendem? Endereço: `;
+const wa = linkWhatsapp(mensagem);
+const migalhas = ehBairro
+  ? [{ nome: 'Bairros', href: '/bairros/' }, { nome: l.nome }]
+  : [{ nome: 'Cidades vizinhas', href: '/cidades/' }, { nome: l.nome }];
+const vizinhos = ehBairro
+  ? (l.proximos ?? []).map((s) => BAIRROS.find((b) => b.slug === s)).filter(Boolean) as Local[]
+  : CIDADES.filter((c) => c.slug !== l.slug);
+const lugar = ehBairro
+  ? { '@type': 'Place', name: `${l.nome}, Pelotas - RS`, containedInPlace: { '@type': 'City', name: 'Pelotas' } }
+  : { '@type': 'City', name: l.nome, containedInPlace: { '@type': 'State', name: 'Rio Grande do Sul' } };
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: l.h1,
+    description: l.descricao,
+    serviceType: 'Aluguel de caçamba de entulho',
+    url: new URL(Astro.url.pathname, Astro.site).href,
+    provider: { '@id': `${base}#organizacao` },
+    areaServed: lugar,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: l.faq.map((f) => ({ '@type': 'Question', name: f.p, acceptedAnswer: { '@type': 'Answer', text: f.r } })),
+  },
+];
+---
+<Base title={l.titulo} description={l.descricao} schema={schema} migalhas={migalhas} mensagem={mensagem}>
+  <header class="pagina-topo">
+    <div class="wrap">
+      <Migalhas itens={migalhas} />
+      <h1>{l.h1}</h1>
+      <p class="lead estreito">{l.sobre}</p>
+      <div class="botoes">
+        <a class="btn btn-whats" href={wa} target="_blank" rel="noopener" data-evento="whatsapp"><IconeWhats />Pedir caçamba {onde}</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="secao">
+    <div class="wrap conteudo">
+      <div>
+        {l.secoes.map((sec) => (
+          <>
+            <h2>{sec.h2}</h2>
+            {sec.paragrafos.map((p) => <p>{p}</p>)}
+            {sec.lista && <ul class="lista-check">{sec.lista.map((i) => <li>{i}</li>)}</ul>}
+          </>
+        ))}
+
+        <h2>Serviços de tele entulho {onde}</h2>
+        <ul class="lista-check">
+          {SERVICOS.map((s) => <li><a href={`/${s.slug}/`}>{s.nome}</a>: {s.curto.charAt(0).toLowerCase() + s.curto.slice(1)}</li>)}
+        </ul>
+
+        <div class="destaque">
+          {ehBairro
+            ? <p><strong>Vale em toda Pelotas:</strong> caçamba de no máximo 5 m³, de empresa autorizada pela prefeitura, em frente à obra e por até 72 horas na via pública. <a href="/blog/cacamba-na-rua-em-pelotas/">Veja as regras</a>.</p>
+            : <p><strong>Fora de Pelotas:</strong> o atendimento é feito conforme a agenda da empresa parceira, com possível taxa de deslocamento. As regras de caçamba na rua são as do município da obra.</p>}
+        </div>
+
+        <h2>Perguntas sobre caçamba {onde}</h2>
+        <Faq itens={l.faq} />
+
+        <p class="fonte" style="margin-top:1.5rem">
+          Dados do {ehBairro ? 'bairro' : 'município'}: {l.fontes.map((f, i) => <>{i > 0 && ', '}<a href={f} target="_blank" rel="noopener nofollow">{new URL(f).hostname.replace('www.', '')}</a></>)}.
+          {ehBairro && <>Regras: <a href={FONTES.lei4850} target="_blank" rel="noopener">Lei Municipal nº 4.850/2002</a> e <a href={FONTES.ecopontos} target="_blank" rel="noopener">Ecopontos do Sanep</a>.</>}
+        </p>
+      </div>
+      <aside class="lateral">
+        <div class="box-cta">
+          <p class="h">Caçamba {onde}</p>
+          <p>{ehBairro ? 'Mande a rua e o tipo de entulho. A mensagem já sai com o nome do bairro.' : 'Confirme a disponibilidade e a taxa de deslocamento antes de agendar a obra.'}</p>
+          <a class="btn btn-whats" href={wa} target="_blank" rel="noopener" data-evento="whatsapp"><IconeWhats />Chamar no WhatsApp</a>
+        </div>
+        {vizinhos.length > 0 && (
+          <nav class="box-links" aria-label={ehBairro ? 'Bairros próximos' : 'Outras cidades'}>
+            <p class="h">{ehBairro ? 'Bairros próximos' : 'Outras cidades atendidas'}</p>
+            <ul>{vizinhos.map((v) => <li><a href={`/${ehBairro ? 'bairros' : 'cidades'}/${v.slug}/`}>Caçamba {v.prep} {v.nome}</a></li>)}</ul>
+          </nav>
+        )}
+        <nav class="box-links" aria-label="Guias">
+          <p class="h">Antes de pedir</p>
+          <ul>
+            <li><a href="/tamanhos-de-cacamba/">Tamanhos de caçamba</a></li>
+            {publicado('preco-cacamba-de-entulho-pelotas') && <li><a href="/blog/preco-cacamba-de-entulho-pelotas/">Quanto custa uma caçamba</a></li>}
+            {publicado('o-que-pode-jogar-na-cacamba') && <li><a href="/blog/o-que-pode-jogar-na-cacamba/">O que pode na caçamba</a></li>}
+            <li><a href="/orcamento/">Formulário de orçamento</a></li>
+            <li><a href="/perguntas-frequentes/">Perguntas frequentes</a></li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </section>
+  <MapaAtendimento
+    local={ehBairro ? `${l.nome}, Pelotas, RS` : `${l.nome}, RS`}
+    titulo={ehBairro ? `${l.nome} no mapa de Pelotas` : `${l.nome} no mapa`}
+    texto={ehBairro ? `${l.nome} faz parte da área de atendimento em Pelotas. A caçamba vai até o endereço da sua obra.` : `${l.nome} é atendida a partir de Pelotas, conforme a agenda da empresa parceira e com possível taxa de deslocamento.`}
+  />
+  <Cta titulo={`Precisa de caçamba ${onde}?`} mensagem={mensagem} />
+</Base>

@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import Migalhas from '../components/Migalhas.astro';
+import IconeWhats from '../components/IconeWhats.astro';
+import FormOrcamento from '../components/FormOrcamento.astro';
+import { SITE, linkWhatsapp } from '../config';
+const migalhas = [{ nome: 'Orçamento' }];
+const msg = 'Olá! Vim pelo site Pelotas Entulho (página de orçamento) e quero uma caçamba. Bairro: ';
+---
+<Base title="Orçamento de Caçamba de Entulho em Pelotas" description="Peça orçamento de caçamba de entulho e tele entulho em Pelotas: preencha nome, bairro, tipo de entulho e data, e o pedido abre pronto no WhatsApp." migalhas={migalhas} mensagem={msg}>
+  <header class="pagina-topo">
+    <div class="wrap">
+      <Migalhas itens={migalhas} />
+      <h1>Orçamento de caçamba de entulho</h1>
+      <p class="lead estreito">Preencha os campos e o pedido abre pronto no WhatsApp. Com o bairro e o tipo de entulho já dá para indicar o tamanho e passar o valor.</p>
+    </div>
+  </header>
+  <section class="secao">
+    <div class="wrap duo" style="align-items:start">
+      <FormOrcamento origem="orcamento" />
+      <div>
+        <Img nome="orcamento" alt="Profissional de obra com capacete amarelo falando ao celular" sizes="(max-width: 860px) 100vw, 520px" />
+        <h2 style="margin-top:2rem;font-size:1.5rem">Prefere conversar?</h2>
+        <p>Chame direto e mande fotos do entulho ou do cômodo que vai ser quebrado.{SITE.horario && ` ${SITE.horario}.`}</p>
+        <p><a class="btn btn-whats" href={linkWhatsapp(msg)} target="_blank" rel="noopener" data-evento="whatsapp"><IconeWhats />Abrir o WhatsApp</a></p>
+        <ul class="lista-check">
+          <li>Orçamento sem compromisso</li>
+          <li>Caçambas de até 5 m³, de empresa autorizada</li>
+          <li>Todos os bairros de Pelotas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>

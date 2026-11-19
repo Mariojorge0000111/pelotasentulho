@@ -1,0 +1,58 @@
+{
+  "slug": "centro",
+  "nome": "Centro",
+  "prep": "no",
+  "titulo": "Caçamba de Entulho no Centro de Pelotas",
+  "descricao": "Caçamba de entulho e tele entulho no Centro de Pelotas: reforma de casarão, apartamento e loja, com caçamba na pista e troca rápida. Orçamento no WhatsApp.",
+  "h1": "Caçamba de entulho no Centro de Pelotas",
+  "sobre": "O Centro é a parte mais antiga e mais densa de Pelotas. Em volta da Praça Coronel Pedro Osório ficam o Mercado Central, o Theatro Guarany, a Biblioteca Pública e boa parte dos casarões que dão fama à cidade. É o bairro da reforma de apartamento, de sala comercial e de imóvel histórico, quase sempre sem recuo e com calçada estreita.",
+  "secoes": [
+    {
+      "h2": "Como é pedir caçamba no Centro",
+      "paragrafos": [
+        "Nos endereços do Centro raramente há pátio ou garagem para receber a caçamba. A Lei nº 4.850/2002 manda colocá-la em frente à obra, de preferência no passeio, deixando 1 metro livre para pedestres. Com calçadas estreitas, quase sempre ela vai para a pista, junto ao meio-fio, com 20 cm de sarjeta livres e a pelo menos 10 metros da esquina.",
+        "Como as quadras são curtas, a regra dos 10 metros da esquina pesa aqui. Imóvel de esquina ou muito perto dela pode precisar que a caçamba fique um pouco adiante. Se do seu lado da rua for proibido estacionar, a lei permite o lado oposto. Diga isso no pedido para o ponto ser combinado antes do caminhão chegar."
+      ]
+    },
+    {
+      "h2": "Casarões e prédios antigos",
+      "paragrafos": [
+        "Muitos imóveis do Centro são inventariados ou tombados. Antes de quebrar parede, trocar esquadria ou mexer na fachada, confirme as autorizações com a prefeitura e com os órgãos de patrimônio. A caçamba é a parte fácil. A licença da obra é o que costuma atrasar.",
+        "Casarão antigo gera entulho diferente: tijolo maciço, argamassa de cal, forro de madeira, assoalho e telha francesa. A madeira deve ser avisada no pedido, porque tem destino diferente do entulho de alvenaria."
+      ],
+      "lista": [
+        "Entrega cedo, antes do movimento do comércio",
+        "Caçamba na pista, junto ao meio-fio, longe da esquina",
+        "Troca no prazo: na rua, o limite é de 72 horas por caçamba"
+      ]
+    },
+    {
+      "h2": "Apartamento: o entulho desce antes da caçamba chegar",
+      "paragrafos": [
+        "Em reforma de apartamento, o entulho desce em sacos pela escada ou pelo elevador de serviço, conforme o regulamento do prédio. Combine com o síndico os horários de obra e de uso do elevador. O ideal é juntar os sacos e pedir a caçamba quando estiver tudo pronto para descer, para ela não ficar na rua esperando material."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "p": "Dá para colocar caçamba na rua no Centro de Pelotas?",
+      "r": "Sim, em frente à obra. Se a calçada for estreita, a caçamba fica na pista onde o estacionamento é permitido, a pelo menos 10 metros da esquina e com 20 cm de sarjeta livre."
+    },
+    {
+      "p": "Moro num casarão tombado. Posso usar caçamba?",
+      "r": "Pode. A caçamba não depende do tombamento, mas a obra sim. Confirme as autorizações de patrimônio antes de começar a quebrar."
+    },
+    {
+      "p": "Reformo um apartamento no Centro. Preciso de caçamba grande?",
+      "r": "Quase sempre não. Reforma de apartamento gera pouco volume, e uma caçamba de 3 ou 4 m³ costuma resolver."
+    }
+  ],
+  "proximos": [
+    "porto",
+    "simoes-lopes",
+    "fragata"
+  ],
+  "fontes": [
+    "https://pt.wikipedia.org/wiki/Pelotas"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "arroio-do-padre",
+  "nome": "Arroio do Padre",
+  "prep": "em",
+  "titulo": "Caçamba de Entulho em Arroio do Padre RS",
+  "descricao": "Caçamba de entulho em Arroio do Padre RS, município cercado por Pelotas: reforma, construção e propriedade rural, com taxa de deslocamento. Consulte.",
+  "h1": "Caçamba de entulho em Arroio do Padre",
+  "sobre": "Arroio do Padre é um município pequeno, de colonização pomerana, totalmente cercado pelo território de Pelotas, na zona rural da Serra dos Tapes. A maior parte das obras é em propriedade rural: casa, galpão, estrebaria e reforma.",
+  "secoes": [
+    {
+      "h2": "Obra no interior",
+      "paragrafos": [
+        "Em Arroio do Padre, a entrega da caçamba depende principalmente da estrada e do espaço na propriedade. Mande a localização no mapa e uma foto da entrada. Com chuva, estradas de chão podem atrasar a entrega ou a retirada, então combine uma data com folga.",
+        "O atendimento sai de Pelotas, conforme a agenda da empresa parceira e com taxa de deslocamento."
+      ]
+    },
+    {
+      "h2": "O que costuma ir para a caçamba",
+      "paragrafos": [
+        "Demolição de construção antiga, troca de piso, reforma de banheiro e construção nova. Separe madeira, telha de fibrocimento, sucata e lixo comum do entulho de alvenaria, porque cada um tem destino diferente."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "p": "Vocês atendem Arroio do Padre?",
+      "r": "Sim, conforme a agenda da empresa parceira e com taxa de deslocamento. Confirme pelo WhatsApp."
+    },
+    {
+      "p": "O que preciso informar no pedido?",
+      "r": "A localização da propriedade, as condições da estrada, o tipo de entulho e a data desejada."
+    }
+  ],
+  "proximos": [],
+  "fontes": [
+    "https://pt.wikipedia.org/wiki/Arroio_do_Padre"
+  ]
+}

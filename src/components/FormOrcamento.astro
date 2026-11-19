@@ -1,0 +1,55 @@
+---
+// Formulário que monta a mensagem e abre o WhatsApp. Nada é enviado nem guardado pelo site.
+import { SITE } from '../config';
+import { BAIRROS } from '../data/locais';
+import IconeWhats from './IconeWhats.astro';
+interface Props { id?: string; origem?: string }
+const { id = 'orcamento', origem = 'formulário' } = Astro.props;
+const bairros = [...BAIRROS.map((b) => b.nome), 'Outro bairro de Pelotas', 'Outra cidade'];
+---
+<form class="form" id={id} data-origem={origem}>
+  <label>Seu nome<input name="nome" autocomplete="name" required /></label>
+  <div class="duas">
+    <label>Bairro
+      <select name="bairro" required>
+        <option value="">Escolha</option>
+        {bairros.map((b) => <option>{b}</option>)}
+      </select>
+    </label>
+    <label>Quando precisa
+      <select name="quando">
+        <option>O quanto antes</option><option>Nesta semana</option><option>Na próxima semana</option><option>Ainda vou decidir</option>
+      </select>
+    </label>
+  </div>
+  <label>Tipo de entulho
+    <select name="tipo">
+      <option>Reforma (piso, azulejo, reboco)</option>
+      <option>Demolição (tijolo, concreto)</option>
+      <option>Telhado (telhas)</option>
+      <option>Limpeza de terreno (terra, mato, restos)</option>
+      <option>Madeira, gesso ou material misturado</option>
+      <option>Não sei, vou mandar foto</option>
+    </select>
+  </label>
+  <label>Rua ou detalhe (opcional)<input name="obs" placeholder="Ex.: Rua Gonçalves Chaves, caçamba dentro do pátio" /></label>
+  <button class="btn btn-whats" type="submit"><IconeWhats />Enviar pelo WhatsApp</button>
+  <p class="nota">O WhatsApp abre com a mensagem pronta. Nada é enviado antes de você tocar em enviar, e o site não guarda seus dados.</p>
+</form>
+<script is:inline define:vars={{ numero: SITE.whatsapp, nome: SITE.nome, id }}>
+  document.getElementById(id).addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = new FormData(e.target);
+    var msg = [
+      'Olá! Vim pelo site ' + nome + ' e quero um orçamento de caçamba.',
+      'Nome: ' + d.get('nome'),
+      'Bairro: ' + d.get('bairro'),
+      'Tipo de entulho: ' + d.get('tipo'),
+      'Quando: ' + d.get('quando'),
+      d.get('obs') ? 'Detalhes: ' + d.get('obs') : '',
+      'Página: ' + document.title,
+    ].filter(Boolean).join('\n');
+    if (window.gtag) window.gtag('event', 'clique_whatsapp', { area: 'formulario', texto_link: 'Formulário de orçamento', pagina: location.pathname, tipo_pagina: e.target.dataset.origem, transport_type: 'beacon' });
+    window.open('https://wa.me/' + numero + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+  });
+</script>

@@ -1,0 +1,38 @@
+{
+  "slug": "morro-redondo",
+  "nome": "Morro Redondo",
+  "prep": "em",
+  "titulo": "Caçamba de Entulho em Morro Redondo RS",
+  "descricao": "Caçamba de entulho em Morro Redondo RS para reforma, construção e limpeza de propriedade, a partir de Pelotas, com taxa de deslocamento. Consulte no WhatsApp.",
+  "h1": "Caçamba de entulho em Morro Redondo",
+  "sobre": "Morro Redondo fica na Serra dos Tapes, a noroeste de Pelotas, e é um município pequeno, de colonização europeia, com muitas propriedades rurais, sítios e casas de fim de semana.",
+  "secoes": [
+    {
+      "h2": "Obra em sítio e propriedade rural",
+      "paragrafos": [
+        "Boa parte dos pedidos em Morro Redondo vem de sítio e chácara: reforma de casa, demolição de galpão, construção de casa nova. O ponto mais importante é o acesso. O caminhão poliguindaste precisa de estrada firme e de espaço para baixar a caçamba. Mande a localização e, se possível, fotos da entrada da propriedade.",
+        "Como a distância é maior, o atendimento depende da agenda da empresa parceira e tem taxa de deslocamento. Programar a entrega e a retirada com antecedência evita viagens perdidas."
+      ]
+    },
+    {
+      "h2": "Separar antes de encher",
+      "paragrafos": [
+        "Em propriedade rural é comum juntar entulho, madeira, telha velha, cerca e sucata. Separe o entulho de obra do resto. Madeira e metal podem ter destino próprio, e alguns materiais, como telha de amianto, não podem ir para a caçamba comum."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "p": "A caçamba chega até o meu sítio?",
+      "r": "Depende da estrada e do espaço para manobra. Mande a localização e fotos do acesso para confirmar."
+    },
+    {
+      "p": "Tem taxa de deslocamento para Morro Redondo?",
+      "r": "Normalmente sim, por causa da distância. Ela aparece no orçamento antes de você fechar."
+    }
+  ],
+  "proximos": [],
+  "fontes": [
+    "https://pt.wikipedia.org/wiki/Morro_Redondo"
+  ]
+}

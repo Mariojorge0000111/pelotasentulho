@@ -1,0 +1,52 @@
+{
+  "slug": "porto",
+  "nome": "Porto",
+  "prep": "no",
+  "titulo": "Caçamba de Entulho no Porto, Pelotas",
+  "descricao": "Tele entulho e caçamba de entulho no bairro Porto, em Pelotas: casas antigas, prédios industriais e obras perto do Canal São Gonçalo. Peça no WhatsApp.",
+  "h1": "Caçamba de entulho no bairro Porto, em Pelotas",
+  "sobre": "O Porto nasceu nas margens do Canal São Gonçalo e foi, por muito tempo, o lado industrial e operário de Pelotas. Hoje mistura casario antigo, galpões e prédios de fábrica reaproveitados (vários deles ocupados pela UFPel), repúblicas de estudantes e obras de reforma para aluguel.",
+  "secoes": [
+    {
+      "h2": "Reforma de casa antiga e de imóvel para estudante",
+      "paragrafos": [
+        "Boa parte das obras do Porto é de reforma: casa antiga transformada em moradia para estudante, banheiro novo, troca de piso, divisão de cômodos. São obras de volume médio, em que uma caçamba de 4 m³ costuma bastar. Às vezes é preciso uma troca no fim, quando sai o entulho do acabamento.",
+        "As casas geminadas, coladas umas nas outras e sem recuo, fazem a caçamba ficar na pista. Combine a posição para não tapar a garagem do vizinho e para respeitar os 20 cm de sarjeta livre que a lei pede."
+      ]
+    },
+    {
+      "h2": "Perto do canal: cuidado com chuva e água",
+      "paragrafos": [
+        "Áreas próximas ao Canal São Gonçalo e às zonas baixas do bairro acumulam água quando chove forte. A sarjeta livre não é só exigência da lei: é por onde a água escoa. Caçamba encostada no meio-fio, sem espaço, vira barragem e alaga a frente da obra.",
+        "Depois de alagamento, aparece muito entulho misturado: reboco que caiu, piso estufado, forro molhado, móveis. A caçamba recebe o entulho de obra. Móveis e eletrodomésticos estragados têm outro destino, então separe antes de encher."
+      ],
+      "lista": [
+        "Deixe a sarjeta livre para a água correr",
+        "Separe móveis e eletrodomésticos do entulho",
+        "Peça a troca se a caçamba encher com reboco molhado, que pesa mais"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "p": "Vocês atendem a região do Porto e da Balsa?",
+      "r": "Sim. O Porto e os loteamentos próximos ao canal fazem parte da área de atendimento em Pelotas."
+    },
+    {
+      "p": "Entulho molhado pesa mais na caçamba?",
+      "r": "Pesa. Reboco e terra encharcados podem deixar a caçamba pesada demais antes de encher. Se for o caso, avise e peça troca mais cedo."
+    },
+    {
+      "p": "Posso colocar a caçamba na frente da república, onde há carro estacionado?",
+      "r": "O ponto precisa estar livre na hora da entrega. Combine com os moradores para liberar a vaga no dia."
+    }
+  ],
+  "proximos": [
+    "centro",
+    "navegantes",
+    "sao-goncalo"
+  ],
+  "fontes": [
+    "https://wp.ufpel.edu.br/avozdoporto/2024/02/10/porto-de-pelotas-a-historia-do-desenvolvimento-industrial-da-regiao-e-o-que-restou-dela/"
+  ]
+}

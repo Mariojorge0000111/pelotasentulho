@@ -1,0 +1,51 @@
+{
+  "slug": "tres-vendas",
+  "nome": "Três Vendas",
+  "prep": "nas",
+  "titulo": "Caçamba de Entulho nas Três Vendas, Pelotas",
+  "descricao": "Tele entulho e caçamba de entulho nas Três Vendas, em Pelotas: reformas, ampliações e obras perto da Av. Fernando Osório. Peça seu orçamento no WhatsApp.",
+  "h1": "Caçamba de entulho nas Três Vendas, em Pelotas",
+  "sobre": "As Três Vendas formam uma das regiões mais populosas de Pelotas, ao norte do Centro, com comércio próprio ao longo da Avenida Fernando Osório e da Avenida Ildefonso Simões Lopes. Quem mora ali resolve quase tudo sem ir ao Centro. A região tem muitas casas de família, conjuntos habitacionais e imóveis de aluguel para estudantes.",
+  "secoes": [
+    {
+      "h2": "Obras típicas das Três Vendas",
+      "paragrafos": [
+        "Reforma de casa de conjunto habitacional, construção de segundo piso, troca de telhado e regularização de puxadinho estão entre os pedidos mais comuns da região. Construir um segundo andar gera pouca demolição, mas muita sobra de material ao longo de semanas. Nesse caso, a caçamba com troca programada funciona melhor do que uma única caçamba parada.",
+        "Nas avenidas comerciais, a caçamba precisa respeitar a sinalização: onde é proibido estacionar, ela não pode ficar. A lei permite o lado oposto da rua. Se também não houver espaço ali, a empresa pede à Secretaria de Transportes a indicação de outro ponto próximo."
+      ]
+    },
+    {
+      "h2": "Telhado: o entulho que mais ocupa espaço",
+      "paragrafos": [
+        "Telha cerâmica quebrada é leve, mas ocupa muito espaço, porque fica cheia de vazios. Uma troca de telhado de casa média pode encher uma caçamba de 5 m³ com folga. Se as telhas forem de fibrocimento antigo, confirme se não são de amianto: nesse caso, elas não vão para a caçamba comum."
+      ],
+      "lista": [
+        "Segundo piso: caçamba com trocas ao longo da obra",
+        "Telhado: prefira 5 m³",
+        "Avenida com proibição de estacionar: combine o ponto antes"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "p": "Vocês entregam caçamba nos conjuntos habitacionais das Três Vendas?",
+      "r": "Sim. Informe a rua e o número. Em ruas estreitas, a entrega é combinada para um horário com menos carros estacionados."
+    },
+    {
+      "p": "Vou construir um segundo andar. Uma caçamba basta?",
+      "r": "Raramente. O mais comum é trabalhar com trocas ao longo da obra, conforme o entulho for saindo."
+    },
+    {
+      "p": "Telha velha pode ir na caçamba?",
+      "r": "Telha cerâmica sim. Telha de fibrocimento antiga deve ser verificada, porque, se tiver amianto, precisa de descarte próprio."
+    }
+  ],
+  "proximos": [
+    "centro",
+    "areal",
+    "barragem"
+  ],
+  "fontes": [
+    "https://www.zapimoveis.com.br/guia-de-cidades/rs+pelotas/"
+  ]
+}

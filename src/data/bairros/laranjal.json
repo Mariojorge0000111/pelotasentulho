@@ -1,0 +1,53 @@
+{
+  "slug": "laranjal",
+  "nome": "Laranjal",
+  "prep": "no",
+  "titulo": "Caçamba de Entulho no Laranjal, Pelotas",
+  "descricao": "Caçamba de entulho no Laranjal, em Pelotas: obras em casa de praia, terrenos amplos e ruas de areia nos balneários. Orçamento e prazo pelo WhatsApp.",
+  "h1": "Caçamba de entulho no Laranjal, em Pelotas",
+  "sobre": "O Laranjal é a praia de Pelotas, na beira da Lagoa dos Patos, com os balneários Santo Antônio, Valverde e Los Angeles. Tem casas de veraneio, moradores o ano todo e muitos terrenos amplos. É também onde se constrói bastante: casa nova, piscina, muro, ampliação para a temporada.",
+  "secoes": [
+    {
+      "h2": "Ruas de areia e terreno amplo",
+      "paragrafos": [
+        "Várias ruas do Laranjal são de areia ou de chão batido. O caminhão poliguindaste é pesado e precisa de piso firme para baixar e levantar a caçamba. Depois de muita chuva, rua de areia fofa ou encharcada pode impedir a manobra. Avise no pedido se a sua rua não é calçada.",
+        "A vantagem é o espaço: na maioria dos terrenos a caçamba fica dentro do lote. Fora da via pública, o limite de 72 horas da lei municipal não se aplica, e o prazo é o combinado com a empresa."
+      ]
+    },
+    {
+      "h2": "Obra antes da temporada",
+      "paragrafos": [
+        "Muita gente reforma a casa de praia entre a primavera e o começo do verão. Nessa época a agenda das caçambas aperta. Peça com antecedência e combine a retirada antes de dezembro, para não ficar com caçamba no terreno quando a família chegar.",
+        "Para pouco material, o Sanep tem o Ecoponto Laranjal, na Rua Bom Jesus, no Balneário Valverde, que recebe até 1,5 m³ por pessoa."
+      ],
+      "lista": [
+        "Rua de areia: avise no pedido",
+        "Prefira deixar a caçamba dentro do terreno",
+        "Peça com antecedência na primavera"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "p": "O caminhão consegue entrar em rua de areia no Laranjal?",
+      "r": "Normalmente sim, com o piso seco e firme. Depois de chuva forte pode ser preciso esperar. Informe se a rua não é calçada."
+    },
+    {
+      "p": "Tem taxa extra para o Laranjal?",
+      "r": "Pode haver, pela distância do Centro. O orçamento informa o valor completo antes de você fechar."
+    },
+    {
+      "p": "Onde fica o Ecoponto do Laranjal?",
+      "r": "Na Rua Bom Jesus, 95, no Balneário Valverde. Recebe até 1,5 m³ por pessoa, de segunda a sábado."
+    }
+  ],
+  "proximos": [
+    "areal",
+    "sao-goncalo",
+    "navegantes"
+  ],
+  "fontes": [
+    "https://portal.sanep.com.br/residuos-solidos/ecopontos",
+    "https://periodicos.ufpel.edu.br/index.php/seur/article/view/20092/12727"
+  ]
+}
