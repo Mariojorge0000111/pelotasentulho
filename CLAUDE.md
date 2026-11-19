@@ -31,7 +31,8 @@ Site de aluguel (rank and rent) do Mário Jorge. Ranqueia no Google para tele en
 - Google Analytics 4: propriedade "pelotasentulho.com.br" na conta "Sites SVG" (a401060034), fluxo web 16375593817, ID `G-5883MK1R4X` em `src/config.ts` (`ga4`). Evento `clique_whatsapp` em todo link wa.me e no envio do formulário (área `formulario`).
 - Pendente: marcar `clique_whatsapp` como evento principal quando ele aparecer no GA (até 24 h depois do primeiro clique).
 - Cloudflare Pages: projeto `pelotasentulho` (https://pelotasentulho.pages.dev), criado em 19/11/2026, ligado ao GitHub (main, `npm run build`, `dist`).
-- Domínio adicionado à Cloudflare (plano Free) em 19/11/2026. Nameservers: arnold.ns.cloudflare.com e rosemary.ns.cloudflare.com (troca no Registro.br feita pelo Mário). Depois de ativo: domínio personalizado no Pages (raiz + www), Crawler Hints ligado e Search Console por propriedade de domínio.
+- Domínio na Cloudflare (plano Free), ativo desde 19/11/2026 (nameservers arnold/rosemary.ns.cloudflare.com, trocados no Registro.br pelo Mário). Domínio personalizado no Pages: pelotasentulho.com.br e www; regra de redirecionamento 301 www → raiz. Crawler Hints ligado (envia mudanças ao IndexNow).
+- Search Console: propriedade de domínio sc-domain:pelotasentulho.com.br (verificada via Cloudflare em 19/11/2026). Sitemap enviado. Indexação pedida em 19/11 para home, aluguel, tele-entulho, recolhimento e obra/reforma (cota diária acabou); tamanhos, coletora e bairros Centro, Fragata, Três Vendas, Areal e Laranjal ficaram para 20/11.
 
 ## Regras de conteúdo
 - Título 30–60 caracteres, descrição 130–160. Um H1 por página.
