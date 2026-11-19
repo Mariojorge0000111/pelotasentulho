@@ -76,5 +76,155 @@
   "alt": "A coastal harbor with fishing boats and a yellow dumpster under a clear sky.",
   "fotografo": "Mathias Reding",
   "busca": "skip full"
+ },
+ "art-preco": {
+  "id": 39353398,
+  "alt": "Black and white image of an urban street scene with historical architecture and a construction worker.",
+  "fotografo": "Andrew Swarga",
+  "busca": "construction site dumpster street"
+ },
+ "art-tamanho": {
+  "id": 39901273,
+  "alt": "Detailed image of a yellow tape measure extended to 10cm on a neutral background.",
+  "fotografo": "Shadow Photography",
+  "busca": "measuring tape construction"
+ },
+ "art-o-que-pode": {
+  "id": 36311213,
+  "alt": "Black and white photo of a worn-out tarp and building materials at an abandoned site.",
+  "fotografo": "Peter Dyllong",
+  "busca": "construction waste"
+ },
+ "art-contratar": {
+  "id": 8961394,
+  "alt": "Focused construction worker with safety gear at a woodwork site.",
+  "fotografo": "Mikael Blomkvist",
+  "busca": "builder smartphone"
+ },
+ "art-4m3": {
+  "id": 9258987,
+  "alt": "An old wheelbarrow on a gravel construction site, highlighting rustic work tools.",
+  "fotografo": "Mathias Reding",
+  "busca": "wheelbarrow rubble"
+ },
+ "art-banheiro": {
+  "id": 40701259,
+  "alt": "Elegant bathroom remodel featuring a tub shower combo with marble and subway tiles in Akron, Ohio.",
+  "fotografo": "Josh (PleaseLinkToOurWebsite)",
+  "busca": "bathroom renovation"
+ },
+ "art-terreno": {
+  "id": 8247721,
+  "alt": "An abandoned rural store with overgrown grass and trees, indicative of nature reclaiming an old structure.",
+  "fotografo": "SN.CHE",
+  "busca": "overgrown vacant lot"
+ },
+ "art-freteiro": {
+  "id": 6306306,
+  "alt": "Old pickup car with heap of bricks in trunk parked on town street near shabby old building on sunny day",
+  "fotografo": "Piotr Arnoldes",
+  "busca": "pickup truck loaded"
+ },
+ "art-cozinha": {
+  "id": 8488031,
+  "alt": "An interior space undergoing reconstruction and demolition for renovation.",
+  "fotografo": "Kindel Media",
+  "busca": "kitchen renovation demolition"
+ },
+ "art-poda": {
+  "id": 10675504,
+  "alt": "Monochrome photo displaying a pile of cut tree logs, emphasizing texture and form.",
+  "fotografo": "Chris F",
+  "busca": "pile of tree branches"
+ },
+ "art-gesso": {
+  "id": 11427055,
+  "alt": "Close-up of a gloved hand applying plaster to a wall indoors in Falun, Sweden.",
+  "fotografo": "Jimmy Nilsson Masth",
+  "busca": "drywall"
+ },
+ "art-volume": {
+  "id": 5921494,
+  "alt": "Hand using calculator for architectural calculations on blueprints.",
+  "fotografo": "RDNE Stock project",
+  "busca": "construction plans calculator"
+ },
+ "art-demolicao": {
+  "id": 15109996,
+  "alt": "An excavator demolishes an old brick building at a construction site, creating debris and dust.",
+  "fotografo": "IslandHopper X",
+  "busca": "house demolition excavator"
+ },
+ "art-reforma-pequena": {
+  "id": 6474133,
+  "alt": "A man sprays paint on a wall while renovating an indoor room with professional equipment.",
+  "fotografo": "Tima Miroshnichenko",
+  "busca": "room renovation painting"
+ },
+ "art-casarao": {
+  "id": 28453185,
+  "alt": "Charming colonial facade of a historic house in Sabará, showcasing traditional architecture and details.",
+  "fotografo": "Malcoln Oliveira",
+  "busca": "colonial house facade brazil"
+ },
+ "art-condominio": {
+  "id": 34360408,
+  "alt": "Construction site beside residential buildings under blue skies.",
+  "fotografo": "SHOX ART",
+  "busca": "apartment building construction"
+ },
+ "art-chuva": {
+  "id": 2422896,
+  "alt": "Reflection of legs and shoes in a puddle on a wet street, creating a surreal urban scene.",
+  "fotografo": "Aidan Roof",
+  "busca": "rain street puddle"
+ },
+ "art-cadastro": {
+  "id": 8470057,
+  "alt": "Top view of construction documents and hard hat in sunlight, capturing planning essence.",
+  "fotografo": "Thirdman",
+  "busca": "clipboard documents construction"
+ },
+ "art-reciclagem": {
+  "id": 15186541,
+  "alt": "Detailed top view of a gravel stones background, ideal for construction use.",
+  "fotografo": "Airam Dato-on",
+  "busca": "crushed concrete aggregate"
+ },
+ "art-sacos": {
+  "id": 9348645,
+  "alt": "Black and white close-up of stacked sandbags, featuring texture and symmetry.",
+  "fotografo": "Konstantin Mishchenko",
+  "busca": "sandbags construction"
+ },
+ "art-checklist": {
+  "id": 8293635,
+  "alt": "Close-up of hands holding a home inspection checklist clipboard for buyers.",
+  "fotografo": "RDNE Stock project",
+  "busca": "checklist clipboard"
+ },
+ "art-bota-fora": {
+  "id": 9714795,
+  "alt": "A chaotic pile of discarded wooden furniture and chairs seen from above.",
+  "fotografo": "Wayee Tan",
+  "busca": "wood scraps pile"
+ },
+ "art-onde-colocar": {
+  "id": 19712727,
+  "alt": "Exterior view of an industrial building featuring a metal staircase and street-level details.",
+  "fotografo": "Mo Eid",
+  "busca": "dumpster sidewalk"
+ },
+ "art-madeira": {
+  "id": 31216469,
+  "alt": "Close-up view of a stacked firewood pile showing a unique abstract pattern, ideal for backgrounds.",
+  "fotografo": "Ivars",
+  "busca": "lumber offcuts"
+ },
+ "art-quanto-tempo": {
+  "id": 7581018,
+  "alt": "Close-up of a person writing a lunch reminder on an October calendar with a purple pen.",
+  "fotografo": "RDNE Stock project",
+  "busca": "calendar planning desk"
  }
 }
